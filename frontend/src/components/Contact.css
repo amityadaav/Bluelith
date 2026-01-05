@@ -1,0 +1,200 @@
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact {
+  padding: 70px 6%;
+  background: #fff;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.contact-left h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #233d4d;
+  margin-bottom: 16px;
+}
+
+.contact-left p {
+  font-size: 17px;
+  color: #475569;
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* Input focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #233d4d;
+  box-shadow: 0 0 0 3px rgba(35, 61, 77, 0.15);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.contact-form button {
+  margin-top: 8px;
+  padding: 14px;
+  background: #233d4d;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #1b2f3d;
+  transform: translateY(-1px);
+}
+
+.contact-form button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================
+   SUCCESS & ERROR
+========================= */
+
+.success-msg {
+  margin-top: 8px;
+  color: #16a34a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.error-msg {
+  margin-top: 8px;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-left h2 {
+    font-size: 34px;
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-left h2 {
+    font-size: 28px;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+}
+/* ===== SKELETON BASE ===== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ===== CONTACT SKELETON ===== */
+.contact-title-skeleton {
+  height: 36px;
+  width: 70%;
+  margin-bottom: 18px;
+}
+
+.contact-text-skeleton {
+  height: 16px;
+  width: 90%;
+  margin-bottom: 12px;
+}
+
+.contact-text-skeleton.short {
+  width: 75%;
+}
+
+.input-skeleton {
+  height: 46px;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.textarea-skeleton {
+  height: 120px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.submit-btn-skeleton {
+  height: 48px;
+  width: 160px;
+  border-radius: 24px;
+}

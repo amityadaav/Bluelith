@@ -1,0 +1,56 @@
+.projects-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.projects-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.projects-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.projects-table th {
+  background: #f5f6fa;
+  color: #555;
+}
+
+.projects-table tr:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.new {
+  background: #e8f0ff;
+  color: #5b6bff;
+}
+
+.status.progress {
+  background: #fff6e5;
+  color: #ff9800;
+}
+
+.status.completed {
+  background: #e6f7ee;
+  color: #2ecc71;
+}

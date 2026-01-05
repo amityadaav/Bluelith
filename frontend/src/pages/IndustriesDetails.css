@@ -1,0 +1,381 @@
+/* Base Styles */
+.industries-details-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+}
+
+.service-page {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: 100%;
+}
+
+
+/* Hero Section */
+.service-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .service-hero.split {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.hero-text-content {
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .hero-text-content {
+    order: 1;
+  }
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.hero-image-container {
+  order: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .hero-image-container {
+    order: 2;
+  }
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hero-image-container:hover .hero-image {
+  transform: scale(1.03);
+}
+
+/* Service Sections */
+.service-section {
+  margin-bottom: 4rem;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.service-section.light-bg {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent, #233d4d);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+/* Service Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.service-card:hover {
+  border-color: var(--accent, #233d4d);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  color: var(--accent, #233d4d);
+  flex-shrink: 0;
+}
+
+.card-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f1f5f9;
+  line-height: 1.4;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--accent, #233d4d);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(5px);
+}
+
+.feature-icon {
+  font-size: 1.25rem;
+  color: var(--accent, #233d4d);
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.service-cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--accent, #233d4d) 0%, #1e293b 100%);
+  border-radius: 0.75rem;
+  color: white;
+  margin: 3rem 0;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cta-title {
+    font-size: 2.5rem;
+  }
+}
+
+.cta-description {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background: white;
+  color: var(--accent, #233d4d);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Not Found Message */
+.not-found-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+.not-found-message h2 {
+  color: #64748b;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-page {
+    padding: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .service-section {
+    padding: 1.5rem;
+  }
+  
+  .service-cta {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .feature-item,
+  .cta-button,
+  .breadcrumb-button {
+    transition: none;
+  }
+  
+  .hero-image {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .breadcrumb-button,
+  .cta-button {
+    display: none;
+  }
+  
+  .service-page {
+    padding: 0;
+  }
+  
+  .service-section {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
+
+/* ================= SKELETON BASE ================= */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ================= SKELETON HERO ================= */
+.hero-title-skeleton {
+  height: 38px;
+  width: 70%;
+  margin-bottom: 14px;
+}
+
+.hero-subtitle-skeleton {
+  height: 18px;
+  width: 90%;
+}
+
+.hero-image-skeleton {
+  height: 280px;
+  width: 100%;
+}
+
+/* ================= SKELETON SECTION ================= */
+.section-title-skeleton {
+  height: 32px;
+  width: 220px;
+  margin-bottom: 24px;
+}
+
+.service-card-skeleton {
+  height: 70px;
+}
+
+.feature-item-skeleton {
+  height: 20px;
+  margin-bottom: 14px;
+}

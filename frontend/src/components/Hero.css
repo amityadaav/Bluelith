@@ -1,0 +1,305 @@
+.hero {
+  background: #fff;
+  color: #000;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 4%;
+}
+
+/* GRID */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* LEFT */
+.hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+
+  /* Motion */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: titleReveal 1s ease-out forwards;
+}
+
+.hero-title .knight {
+  display: inline-block;
+  margin-left: 6px;
+  animation: knightFloat 2.5s ease-in-out infinite;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: #000;
+  max-width: 480px;
+  margin-bottom: 30px;
+}
+
+/* BUTTON */
+button.btn-primary {
+  margin-top: 20px !important;
+  padding: 14px 28px !important;
+  border-radius: 30px !important;
+  border: none !important;
+  background: #000 !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+button.btn-primary:hover {
+  background: #fff4e4 !important;
+  color: #000 !important;
+}
+.btn-primary {
+  width: auto;              /* full width remove */
+  min-width: unset;
+  display: inline-flex;     /* button content ke according */
+  align-items: center;
+  justify-content: center;
+}
+
+/* RIGHT */
+.hero-right {
+  position: relative;
+  height: 460px;
+}
+
+/* IMAGE CARD */
+.hero-card {
+  position: absolute;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.35s ease;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* MAIN CARD */
+.hero-card {
+  width: 320px;
+  height: 420px;
+  right: 0;
+  top: 0;
+}
+
+/* SMALL 1 */
+.hero-card.small {
+  width: 220px;
+  height: 160px;
+  right: 250px;
+  top: 60px;
+  animation-delay: 1s;
+}
+
+/* SMALL 2 */
+.hero-card.small2 {
+  width: 200px;
+  height: 140px;
+  right: 200px;
+  bottom: 30px;
+  animation-delay: 2s;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes titleReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes knightFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-right {
+    height: 380px;
+  }
+
+  .hero-card {
+    width: 280px;
+    height: 380px;
+  }
+
+  .hero-card.small {
+    width: 190px;
+    height: 140px;
+    right: 220px;
+  }
+
+  .hero-card.small2 {
+    width: 170px;
+    height: 120px;
+    right: 160px;
+  }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+  }
+
+  .hero-right {
+    height: auto;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-card {
+    position: static;
+    width: 90%;
+    max-width: 320px;
+    height: 220px;
+    animation: none;
+  }
+
+  .hero-card.small,
+  .hero-card.small2 {
+    width: 45%;
+    height: 140px;
+  }
+}
+@media (max-width: 768px) {
+  .btn-primary {
+    width: auto !important;
+    padding: 14px 26px;
+  }
+}
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .btn-primary {
+    padding: 12px 22px;
+  }
+
+  .hero-card,
+  .hero-card.small,
+  .hero-card.small2 {
+    width: 100%;
+  }
+}
+/* ===== SKELETON BASE ===== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 12px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* ===== HERO TEXT SKELETON ===== */
+.hero-title-skeleton {
+  height: 44px;
+  width: 80%;
+  margin-bottom: 14px;
+}
+
+.hero-title-skeleton.short {
+  width: 60%;
+}
+
+.hero-title-skeleton.shorter {
+  width: 70%;
+}
+
+.hero-sub-skeleton {
+  height: 18px;
+  width: 90%;
+  margin: 24px 0;
+}
+
+.hero-btn-skeleton {
+  height: 48px;
+  width: 160px;
+  border-radius: 24px;
+}
+
+/* ===== HERO IMAGE SKELETON ===== */
+.hero-img-skeleton.large {
+  width: 280px;
+  height: 200px;
+  margin-bottom: 16px;
+}
+
+.hero-img-skeleton.small {
+  width: 200px;
+  height: 140px;
+  margin-bottom: 12px;
+}
+
+.hero-img-skeleton.small2 {
+  width: 200px;
+  height: 140px;
+}

@@ -1,0 +1,93 @@
+body {
+  font-family: sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+}
+/* HEADER */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.admin-name {
+  margin-right: 14px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #ff4d4d;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* PROJECT DETAILS */
+.project-details-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 700px;
+}
+
+.project-details-card p {
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  margin-top: 20px;
+}
+
+.project-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-actions select {
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #5b6bff;
+  font-weight: 600;
+}
+
+
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  background: #111;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+main {
+  padding: 30px;
+  flex: 1;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-right: 10px;
+  display: inline-block;
+}

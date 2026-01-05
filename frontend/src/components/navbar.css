@@ -1,0 +1,591 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+/* NAVBAR */
+.tcs-navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  color: #000;
+  z-index: 100;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* CONTAINER */
+.nav-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 14px 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LEFT */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tcs-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+/* CENTER MENU */
+.center-menu {
+  display: flex;
+  gap: 26px;
+}
+
+.menu-item {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-item:hover {
+  color: #000;
+}
+
+/* RIGHT */
+.right-section {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.contact-btn {
+  background: #000;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* MOBILE PANEL */
+.mobile-panel {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-panel.open {
+  transform: translateX(0);
+}
+
+/* MOBILE HEADER */
+.mobile-header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* MOBILE LIST */
+.mobile-list {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.mobile-item {
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* MOBILE CTA */
+.mobile-contact {
+  margin: 20px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+/* =========================
+   SEARCH ICON CONTAINER
+========================= */
+/* =========================
+   SEARCH BOX
+========================= */
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* Search input */
+.search-icon input {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: #333;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(10px);
+  font-weight: 500;
+}
+
+/* Search icon container */
+.search-icon .icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* Search icon SVG */
+.search-icon .icon {
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+.search-icon .icon-container:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+.search-icon .icon-container:hover .icon {
+  transform: scale(1.1);
+}
+
+/* =========================
+   ACTIVE STATE
+========================= */
+.search-icon.active {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  padding: 6px 12px 6px 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.search-icon.active input {
+  width: 240px;
+  opacity: 1;
+  padding: 8px 16px 8px 0;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.search-icon.active .icon-container {
+  background: #fff;
+}
+
+.search-icon.active .icon-container:hover {
+  background: #fff;
+}
+.search-icon.active .icon-container:hover .icon {
+  color: #000;
+}
+/* Input focus state */
+.search-icon.active input:focus {
+  color: #000;
+  background: transparent;
+}
+
+/* Search box with micro-interactions */
+.search-icon.active input::placeholder {
+  color: #000;
+  font-weight: 400;
+}
+
+/* Clear button (optional) */
+.search-clear {
+  position: absolute;
+  right: 50px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.search-icon.active input:not(:placeholder-shown) + .search-clear {
+  opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .search-icon.active input {
+    width: 180px;
+    padding: 8px 12px 8px 0;
+  }
+  
+  .search-icon.active {
+    padding: 6px 10px 6px 16px;
+  }
+  
+  .search-icon .icon-container {
+    width: 32px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-icon.active input {
+    width: 140px;
+  }
+}
+
+/* ===================== */
+/* RESPONSIVE BREAKPOINTS */
+/* ===================== */
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .center-menu,
+  .contact-btn {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .brand-text {
+    font-size: 18px;
+  }
+
+  .tcs-logo {
+    width: 34px;
+  }
+
+  .mobile-item {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+/* =========================
+   DESKTOP SEARCH CONTAINER
+========================= */
+.search-container {
+  position: relative;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-wrapper.expanded {
+  border-color: #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Input */
+.search-input {
+  width: 220px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+/* Icons */
+.search-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+.clear-icon {
+  cursor: pointer;
+  color: #666;
+}
+
+/* =========================
+   SEARCH RESULTS DROPDOWN
+========================= */
+.search-results {
+  position: absolute;
+  top: 115%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  z-index: 99;
+}
+
+.search-result-item {
+  padding: 12px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-result-item:hover {
+  background: #f5f5f5;
+}
+
+.no-results {
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #777;
+}
+/* =========================
+   MOBILE SEARCH
+========================= */
+.mobile-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.mobile-search-icon {
+  color: #000;
+}
+
+.mobile-clear-icon {
+  cursor: pointer;
+}
+
+/* MOBILE SEARCH RESULTS */
+.mobile-search-results {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-search-result-item {
+  padding: 14px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.mobile-search-result-item:hover {
+  background: #f0f0f0;
+}
+.no-mobile-results {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+
+
+/* =========================
+   SEARCH DROPDOWN (ADD-ON ONLY)
+   DOES NOT MODIFY EXISTING CSS
+========================= */
+
+/* Wrapper jo React me inline style se diya hai */
+.search-dropdown {
+  position: absolute;
+  top: 115%;
+  right: 0;
+  width: 240px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Individual item */
+.search-dropdown-item {
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+/* No result text */
+.search-dropdown-empty {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #777;
+}
+/* ===== SKELETON BASE ===== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ===== NAVBAR SKELETON ===== */
+.logo-skeleton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.brand-skeleton {
+  width: 80px;
+  height: 16px;
+  margin-left: 10px;
+}
+
+.menu-skeleton {
+  width: 70px;
+  height: 14px;
+  margin: 0 10px;
+}
+
+.btn-skeleton {
+  width: 120px;
+  height: 36px;
+  border-radius: 20px;
+}
+/* ===== SEARCH SKELETON ===== */
+.search-skeleton {
+  width: 200px;
+  height: 32px;
+  border-radius: 30px;
+} /* MOBILE */
+@media (max-width: 600px) {
+  .tcs-navbar {
+    padding: 10px 0;
+  }
+} 
+/* MOBILE */
+@media (max-width: 600px) {
+  .tcs-navbar {
+    padding: 10px 0;
+  }
+} 
+/* ===== SKELETON BASE ===== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite; 
+  border-radius: 8px;
+}
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+/* ===== NAVBAR SKELETON ===== */
+.logo-skeleton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+} 
+.brand-skeleton {
+  width: 100px;
+  height: 16px;
+  margin-left: 10px;
+}
+.menu-skeleton {
+  width: 70px;
+  height: 14px;
+  margin: 0 10px;
+}
+.btn-skeleton {
+  width: 120px;
+  height: 36px;
+  border-radius: 20px;
+}
+/* ===== SEARCH SKELETON ===== */
+.search-skeleton {
+  width: 200px;
+  height: 32px;
+  border-radius: 30px;
+}

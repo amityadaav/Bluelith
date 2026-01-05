@@ -1,0 +1,171 @@
+.why {
+  padding: 50px 6%;
+  background: #fff;
+}
+
+.why-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.why-title {
+  align-self: start;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+.why-subtitle {
+  text-align: start;
+  font-size: 16px;
+  margin: 12px 0 40px 0;
+  max-width: 640px;
+  color: #555;
+}
+
+.why-grid {
+  display: grid;
+  background: #fff;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.why-card {
+  background: linear-gradient(
+    135deg,
+    #233d4d,
+    #1b2f3c
+  ) !important;
+
+  box-shadow:
+    0 12px 28px rgba(35, 61, 77, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+
+
+
+.why-card:hover {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+
+.why-card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* HEADER */
+.why-card-header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #ffffff; 
+}
+
+.why-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #233d4d;
+  font-size: 22px;
+  color: #8fd3ff; 
+  font-weight: 700;
+  margin-right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.why-card h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.why-short {
+  font-size: 14px;
+  color: #d6e4ec;
+}
+
+/* TOGGLE */
+.why-toggle {
+  margin-top: 16px;
+  background: none;
+  border: none;
+  color: #d6e4ec;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* FAQ CONTENT */
+.why-faq {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #d6e4ec;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .why {
+    padding: 70px 5%;
+  }
+} 
+/* ===== SKELETON BASE ===== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ===== WHY CHOOSE US SKELETON ===== */
+.skeleton-wrapper {
+  padding: 24px;
+}
+
+.why-icon-skeleton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.why-text-skeleton {
+  flex: 1;
+  margin-left: 14px;
+}
+
+.why-title-skeleton {
+  height: 18px;
+  width: 60%;
+  margin-bottom: 8px;
+}
+
+.why-short-skeleton {
+  height: 14px;
+  width: 90%;
+}
+
+.why-btn-skeleton {
+  height: 38px;
+  width: 160px;
+  margin-top: 18px;
+}

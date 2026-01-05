@@ -1,0 +1,31 @@
+.dashboard-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #111;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card h4 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.stat-card span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+}

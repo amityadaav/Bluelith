@@ -1,0 +1,277 @@
+.about {
+  padding: 50px 6%;
+  background: #fff;
+}
+
+.about-container {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* LEFT */
+.About-title{
+  text-align: start;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+.About-subtitle {
+  text-align: start;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 24px;
+  color: #1e1e1e;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+.about-content h2 span {
+  color: #5b6bff;
+}
+
+.about-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.about-points {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.about-points div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.about-icon {
+  color: #000; /* brand color */
+  font-size: 18px;
+}
+
+/* BUTTON */
+.about-btn {
+  margin-top: 20px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  background: #FFF4E4;
+  color: #000;
+}
+
+/* RIGHT */
+.about-visual {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  width: 340px;
+  height: 160px;
+  background: linear-gradient(
+    135deg,
+    #233d4d,
+    #1b2f3c
+  );
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  border-radius: 4px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(91, 107, 255, 0.35),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.about-card:hover::before {
+  opacity: 1;
+}
+
+.about-card .icon {
+  background: #233d4d;
+  font-size: 34px;
+  color: #8fd3ff;
+}
+
+.about-card h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFF4E4;
+}
+
+.about-card p {
+  font-size: 14px;
+  color: #8fd3ff; 
+  margin-top: 4px;
+}
+
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-inner h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #FFF4E4;
+}
+
+.small-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+
+.magnetic {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.magnetic:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(91, 107, 255, 0.35);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding: 80px 5%;
+  }
+
+  .about-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .about-points {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== SKELETON BASE ===== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ===== ABOUT SKELETON ===== */
+.about-title-skeleton {
+  height: 32px;
+  width: 40%;
+  margin-bottom: 14px;
+}
+
+.about-subtitle-skeleton {
+  height: 24px;
+  width: 70%;
+  margin-bottom: 18px;
+}
+
+.about-text-skeleton {
+  height: 16px;
+  width: 90%;
+  margin-bottom: 24px;
+}
+
+.about-point-skeleton {
+  height: 18px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.about-btn-skeleton {
+  height: 46px;
+  width: 150px;
+  border-radius: 24px;
+  margin-top: 20px;
+}
+
+.about-icon-skeleton {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.about-value-skeleton {
+  height: 28px;
+  width: 50%;
+  margin-bottom: 8px;
+}
+
+.about-label-skeleton {
+  height: 14px;
+  width: 70%;
+}
+.about-card-skeleton {
+  width: 340px;
+  height: 160px;
+  border-radius: 4px;
+}

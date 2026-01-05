@@ -1,0 +1,283 @@
+/* =========================
+   INDUSTRIES SECTION
+========================= */
+
+.industries {
+  padding: 50px 6%;
+  background: #ffffff;
+  color: #000;
+  /* ❌ min-height hata diya (skeleton blank issue ka main reason) */
+}
+
+.title {
+  text-align: start;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+.projects-subtitle {
+  margin: 8px 0 50px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  min-height: 360px; /* 🔥 skeleton visible fix */
+}
+
+/* =========================
+   CARD BASE STYLE
+========================= */
+
+.industry-card {
+  position: relative;
+  padding: 32px 26px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.industry-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 0;
+}
+
+.industry-card:hover::before {
+  opacity: 1;
+}
+
+.industry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.industry-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.industry-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.industry-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.industry-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.industry-card ul li {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.industry-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: currentColor;
+  font-weight: bold;
+}
+
+/* =========================
+   EXPLORE BUTTON
+========================= */
+
+.explore-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.explore-text {
+  color: #2563eb;
+  transition: color 0.3s ease;
+}
+
+.arrow-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.industry-card:hover .arrow-circle {
+  transform: translateX(6px);
+}
+
+/* =========================
+   COLOR VARIANTS
+========================= */
+
+.card-healthcare::before {
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+}
+.card-healthcare .industry-icon {
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+}
+
+.card-education::before {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+}
+.card-education .industry-icon {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+}
+
+.card-real-estate::before {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+}
+.card-real-estate .industry-icon {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+}
+
+.card-ecommerce::before {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+.card-ecommerce .industry-icon {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+/* =========================
+   HOVER TEXT COLOR
+========================= */
+
+.industry-card:hover h3,
+.industry-card:hover ul li,
+.industry-card:hover .explore-text {
+  color: #ffffff;
+}
+
+/* =========================
+   FADE-IN
+========================= */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   🔥 SKELETON LOADER (FIXED)
+========================= */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* 🔥 IMPORTANT FIX */
+.skeleton-wrapper {
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+/* Disable hover overlay on skeleton */
+.skeleton-wrapper::before {
+  display: none !important;
+}
+
+.skeleton-wrapper:hover {
+  transform: none !important;
+}
+
+/* Skeleton shapes */
+.industry-icon-skeleton {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.industry-title-skeleton {
+  height: 22px;
+  width: 60%;
+  margin-bottom: 18px;
+}
+
+.industry-point-skeleton {
+  height: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.industry-btn-skeleton {
+  height: 38px;
+  width: 160px;
+  margin-top: 22px;
+  border-radius: 20px;
+}
