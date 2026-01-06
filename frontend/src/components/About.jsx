@@ -9,7 +9,7 @@ import {
   FaCogs,
   FaHandshake,
 } from "react-icons/fa";
-import "./about.css";
+import "./About.css";
 
 export default function About() {
   const [expanded, setExpanded] = useState(false);
