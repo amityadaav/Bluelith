@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { IoSearch, IoClose, IoMenu } from "react-icons/io5";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./Navbar.css";
+import "./navbar.css";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
