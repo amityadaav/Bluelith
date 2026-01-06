@@ -67,14 +67,12 @@ export default function Projects() {
     e.preventDefault();
 
     try {
-      const res = await fetch(
-        "http://localhost:5000/api/projects/start-project",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form),
-        }
-      );
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/start-project`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      
 
       const data = await res.json();
       if (!res.ok) {
