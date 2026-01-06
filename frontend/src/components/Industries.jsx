@@ -134,7 +134,7 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import "./industries.css";
+import "./Industries.css";
 
 export default function Industries() {
   const navigate = useNavigate();
