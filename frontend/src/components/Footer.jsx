@@ -71,7 +71,7 @@ export default function Footer() {
         {/* BRAND */}
         <div className="footer-brand">
           <Link to="/" className="footer-brand-link">
-            <h3>SkyLith Technologies</h3>
+            <h3>BlueLith Technologies</h3>
           </Link>
           <p>
             Building modern, scalable and future-ready digital solutions for
@@ -124,17 +124,16 @@ export default function Footer() {
           <h4>Contact</h4>
           <p>
             Email:
-            <a href="mailto:contact@skylith.com">
+            <a href="mailto:contact@blueLithteam@gmail.com">
               {" "}
-              skylithteam@gmail.com
+              blueLithteam@gmail.com
             </a>
           </p>
-          <p>Phone: +91 (990) 590-6689</p>
         </div>
       </div>
 
       <div className="footer-bottom">
-        © 2025 SkyLith Technologies. All rights reserved.
+        © 2025 BlueLith Technologies. All rights reserved.
       </div>
     </footer>
   );

@@ -91,7 +91,7 @@ export default function WhyChooseUs() {
   return (
     <section id="WhyChooseUs" className="why">
       <div className="why-container">
-        <h2 className="why-title">Why Choose SkyLith</h2>
+        <h2 className="why-title">Why Choose BlueLith</h2>
         <p className="why-subtitle">
           Trusted by startups and businesses for building scalable digital products
         </p>
