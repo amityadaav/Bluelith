@@ -11,14 +11,14 @@ export default function Services() {
       title: "Web Development",
       slug: "web-development",
       desc:
-        "We build fast, secure, and scalable websites with modern technologies that deliver seamless user experiences and measurable business growth.",
+        "We provide professional web development services to build fast, secure, and scalable websites and web applications that drive business growth.",
       image: "/images/Web.webp",
     },
     {
       title: "Mobile Apps",
       slug: "mobile-app",
       desc:
-        "High-performance Android and iOS applications crafted using React Native and Flutter for reliability, speed, and user engagement.",
+        "We build high-performance, secure, and scalable mobile applications for Android and iOS using modern cross-platform technologies.",
       image: "/images/app.webp",
     },
     {

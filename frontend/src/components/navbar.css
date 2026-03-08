@@ -589,3 +589,14 @@ body {
   height: 32px;
   border-radius: 30px;
 }
+.menu-item.active{
+font-weight:600;
+}
+
+.tcs-navbar.scrolled{
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.left-section{
+cursor:pointer;
+}

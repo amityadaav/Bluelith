@@ -98,9 +98,7 @@ export default function About() {
             We Build Digital Products That Grow Your Business
           </h3>
           <p>
-            We are a modern software development company focused on building
-            scalable web and mobile solutions. Our mission is to help startups
-            and businesses transform ideas into powerful digital experiences.
+            BlueLith is a modern software development company focused on delivering scalable web and mobile solutions. We provide professional web development services and custom software development solutions that help startups and businesses transform ideas into powerful digital products.
           </p>
 
           <div className="about-points">

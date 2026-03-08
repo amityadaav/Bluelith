@@ -1,23 +1,225 @@
 
+// import { useState, useEffect } from "react";
+// import { IoSearch, IoClose, IoMenu } from "react-icons/io5";
+// import { useNavigate, useLocation } from "react-router-dom";
+// import "./navbar.css";
+
+// export default function Navbar() {
+//   const [openMenu, setOpenMenu] = useState(false);
+//   const [showSearch, setShowSearch] = useState(false);
+//   const [searchText, setSearchText] = useState("");
+//   const [loading, setLoading] = useState(true);
+
+//   const navigate = useNavigate();
+//   const location = useLocation();
+
+//   /* ================= SKELETON TIMER ================= */
+//   useEffect(() => {
+//     const timer = setTimeout(() => setLoading(false), 500);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   const menuItems = [
+//     { label: "Home", id: "hero" },
+//     { label: "About", id: "about" },
+//     { label: "WhyChooseUs", id: "WhyChooseUs" },
+//     { label: "Services", id: "services" },
+//     { label: "Projects", id: "projects" },
+//     { label: "Industries", id: "industries" },
+//   ];
+
+//   /* ================= SMART SCROLL ================= */
+//   const handleScroll = (id) => {
+//     if (location.pathname === "/") {
+//       const section = document.getElementById(id);
+//       if (section) {
+//         section.scrollIntoView({ behavior: "smooth" });
+//         window.history.replaceState(null, "", `#${id}`);
+//       }
+//     } else {
+//       navigate(`/#${id}`);
+//     }
+
+//     setOpenMenu(false);
+//     setShowSearch(false);
+//     setSearchText("");
+//   };
+
+//   const filteredItems = menuItems.filter((item) =>
+//     item.label.toLowerCase().includes(searchText.toLowerCase())
+//   );
+
+//   /* ================= NAVBAR SKELETON ================= */
+//   const NavbarSkeleton = () => (
+//     <header className="tcs-navbar">
+//       <div className="nav-container">
+//         <div className="left-section">
+//           <div className="skeleton logo-skeleton"></div>
+//           <div className="skeleton brand-skeleton"></div>
+//         </div>
+
+//         <div className="center-menu">
+//           {Array(4)
+//             .fill(0)
+//             .map((_, i) => (
+//               <div className="skeleton menu-skeleton" key={i}></div>
+//             ))}
+//         </div>
+
+//         <div className="right-section">
+//           <div className="skeleton btn-skeleton"></div>
+//         </div>
+//       </div>
+//     </header>
+//   );
+
+//   if (loading) return <NavbarSkeleton />;
+
+//   /* ================= RENDER ================= */
+//   return (
+//     <header className="tcs-navbar">
+//       <div className="nav-container">
+//         {/* LOGO */}
+//         <div className="left-section">
+//           <img
+//             src="/images/logos.webp"
+//             loading="lazy"
+//             className="tcs-logo"
+//             alt="BlueLith"
+//           />
+//           <span className="brand-text">BlueLith</span>
+//         </div>
+
+//         {/* DESKTOP MENU */}
+//         <nav className="center-menu">
+//           {menuItems.map((item) => (
+//             <div
+//               key={item.id}
+//               className="menu-item"
+//               onClick={() => handleScroll(item.id)}
+//             >
+//               {item.label}
+//             </div>
+//           ))}
+//         </nav>
+
+//         {/* RIGHT SECTION */}
+//         <div className="right-section">
+//           {/* SEARCH */}
+//           <div style={{ position: "relative" }}>
+//             <div className={`search-icon ${showSearch ? "active" : ""}`}>
+//               <input
+//                 type="text"
+//                 placeholder="Search services..."
+//                 value={searchText}
+//                 onChange={(e) => setSearchText(e.target.value)}
+//                 onBlur={() =>
+//                   setTimeout(() => {
+//                     setShowSearch(false);
+//                     setSearchText("");
+//                   }, 200)
+//                 }
+//               />
+
+//               <div
+//                 className="icon-container"
+//                 onClick={() => setShowSearch(true)}
+//               >
+//                 <IoSearch size={18} />
+//               </div>
+//             </div>
+
+//             {showSearch && searchText && (
+//               <div className="search-dropdown">
+//                 {filteredItems.length > 0 ? (
+//                   filteredItems.map((item) => (
+//                     <div
+//                       key={item.id}
+//                       className="search-dropdown-item"
+//                       onMouseDown={() => handleScroll(item.id)}
+//                     >
+//                       {item.label}
+//                     </div>
+//                   ))
+//                 ) : (
+//                   <div className="search-dropdown-empty">
+//                     No results found
+//                   </div>
+//                 )}
+//               </div>
+//             )}
+//           </div>
+
+//           {/* CONTACT */}
+//           <button
+//             className="contact-btn"
+//             onClick={() => handleScroll("contact")}
+//           >
+//             Contact Us
+//           </button>
+
+//           {/* HAMBURGER */}
+//           <IoMenu
+//             size={30}
+//             className="menu-icon"
+//             onClick={() => setOpenMenu(true)}
+//           />
+//         </div>
+//       </div>
+
+//       {/* MOBILE MENU */}
+//       <div className={`mobile-panel ${openMenu ? "open" : ""}`}>
+//         <div className="mobile-header">
+//           <div className="left-section">
+//             <img
+//               src="/images/logos.webp"
+//               loading="lazy"
+//               className="tcs-logo"
+//               alt=""
+//             />
+//             <span className="brand-text">BlueLith</span>
+//           </div>
+//           <IoClose size={32} onClick={() => setOpenMenu(false)} />
+//         </div>
+
+//         <div className="mobile-list">
+//           {menuItems.map((item) => (
+//             <div
+//               key={item.id}
+//               className="mobile-item"
+//               onClick={() => handleScroll(item.id)}
+//             >
+//               {item.label}
+//             </div>
+//           ))}
+
+//           <div
+//             className="mobile-contact"
+//             onClick={() => handleScroll("contact")}
+//           >
+//             Contact Us
+//           </div>
+//         </div>
+//       </div>
+//     </header>
+//   );
+// }
 import { useState, useEffect } from "react";
 import { IoSearch, IoClose, IoMenu } from "react-icons/io5";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./navbar.css";
 
 export default function Navbar() {
+
   const [openMenu, setOpenMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [loading, setLoading] = useState(true);
+  const [active, setActive] = useState("hero");
+  const [scrolled, setScrolled] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
-
-  /* ================= SKELETON TIMER ================= */
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 500);
-    return () => clearTimeout(timer);
-  }, []);
 
   const menuItems = [
     { label: "Home", id: "hero" },
@@ -28,16 +230,86 @@ export default function Navbar() {
     { label: "Industries", id: "industries" },
   ];
 
-  /* ================= SMART SCROLL ================= */
+  /* ================= SKELETON ================= */
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  /* ================= SCROLL SHADOW ================= */
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  /* ================= CLOSE MOBILE MENU ON ROUTE ================= */
+
+  useEffect(() => {
+    setOpenMenu(false);
+  }, [location.pathname]);
+
+  /* ================= ESC KEY CLOSE ================= */
+
+  useEffect(() => {
+    const esc = (e) => {
+      if (e.key === "Escape") {
+        setOpenMenu(false);
+        setShowSearch(false);
+      }
+    };
+
+    window.addEventListener("keydown", esc);
+    return () => window.removeEventListener("keydown", esc);
+  }, []);
+
+  /* ================= SCROLL SPY ================= */
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0.1 }
+    );
+
+    menuItems.forEach((item) => {
+      const el = document.getElementById(item.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+
+  }, []);
+
+  /* ================= SCROLL FUNCTION ================= */
+
   const handleScroll = (id) => {
+
     if (location.pathname === "/") {
+
       const section = document.getElementById(id);
+
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
         window.history.replaceState(null, "", `#${id}`);
       }
+
     } else {
+
       navigate(`/#${id}`);
+
     }
 
     setOpenMenu(false);
@@ -45,11 +317,14 @@ export default function Navbar() {
     setSearchText("");
   };
 
+  /* ================= SEARCH ================= */
+
   const filteredItems = menuItems.filter((item) =>
     item.label.toLowerCase().includes(searchText.toLowerCase())
   );
 
-  /* ================= NAVBAR SKELETON ================= */
+  /* ================= SKELETON ================= */
+
   const NavbarSkeleton = () => (
     <header className="tcs-navbar">
       <div className="nav-container">
@@ -59,11 +334,9 @@ export default function Navbar() {
         </div>
 
         <div className="center-menu">
-          {Array(4)
-            .fill(0)
-            .map((_, i) => (
-              <div className="skeleton menu-skeleton" key={i}></div>
-            ))}
+          {Array(4).fill(0).map((_, i) => (
+            <div className="skeleton menu-skeleton" key={i}></div>
+          ))}
         </div>
 
         <div className="right-section">
@@ -75,39 +348,60 @@ export default function Navbar() {
 
   if (loading) return <NavbarSkeleton />;
 
-  /* ================= RENDER ================= */
   return (
-    <header className="tcs-navbar">
+    <header className={`tcs-navbar ${scrolled ? "scrolled" : ""}`}>
+
       <div className="nav-container">
+
         {/* LOGO */}
-        <div className="left-section">
+
+        <div
+          className="left-section"
+          onClick={() => handleScroll("hero")}
+          style={{ cursor: "pointer" }}
+        >
           <img
             src="/images/logos.webp"
-            loading="lazy"
             className="tcs-logo"
-            alt="BlueLith"
+            alt="BlueLith logo"
+            loading="eager"
           />
           <span className="brand-text">BlueLith</span>
         </div>
 
         {/* DESKTOP MENU */}
-        <nav className="center-menu">
+
+        <nav className="center-menu" aria-label="Main Navigation">
+
           {menuItems.map((item) => (
+
             <div
               key={item.id}
-              className="menu-item"
+              tabIndex="0"
+              role="button"
+              className={`menu-item ${active === item.id ? "active" : ""}`}
               onClick={() => handleScroll(item.id)}
+              onKeyDown={(e) =>
+                e.key === "Enter" && handleScroll(item.id)
+              }
             >
               {item.label}
             </div>
+
           ))}
+
         </nav>
 
         {/* RIGHT SECTION */}
+
         <div className="right-section">
+
           {/* SEARCH */}
+
           <div style={{ position: "relative" }}>
+
             <div className={`search-icon ${showSearch ? "active" : ""}`}>
+
               <input
                 type="text"
                 placeholder="Search services..."
@@ -127,11 +421,15 @@ export default function Navbar() {
               >
                 <IoSearch size={18} />
               </div>
+
             </div>
 
             {showSearch && searchText && (
+
               <div className="search-dropdown">
+
                 {filteredItems.length > 0 ? (
+
                   filteredItems.map((item) => (
                     <div
                       key={item.id}
@@ -141,16 +439,23 @@ export default function Navbar() {
                       {item.label}
                     </div>
                   ))
+
                 ) : (
+
                   <div className="search-dropdown-empty">
                     No results found
                   </div>
+
                 )}
+
               </div>
+
             )}
+
           </div>
 
           {/* CONTACT */}
+
           <button
             className="contact-btn"
             onClick={() => handleScroll("contact")}
@@ -158,32 +463,44 @@ export default function Navbar() {
             Contact Us
           </button>
 
-          {/* HAMBURGER */}
+          {/* MOBILE MENU ICON */}
+
           <IoMenu
             size={30}
             className="menu-icon"
             onClick={() => setOpenMenu(true)}
+            aria-label="Open menu"
           />
+
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE PANEL */}
+
       <div className={`mobile-panel ${openMenu ? "open" : ""}`}>
+
         <div className="mobile-header">
-          <div className="left-section">
+
+          <div
+            className="left-section"
+            onClick={() => handleScroll("hero")}
+          >
             <img
               src="/images/logos.webp"
-              loading="lazy"
               className="tcs-logo"
-              alt=""
+              alt="BlueLith"
             />
             <span className="brand-text">BlueLith</span>
           </div>
+
           <IoClose size={32} onClick={() => setOpenMenu(false)} />
+
         </div>
 
         <div className="mobile-list">
+
           {menuItems.map((item) => (
+
             <div
               key={item.id}
               className="mobile-item"
@@ -191,6 +508,7 @@ export default function Navbar() {
             >
               {item.label}
             </div>
+
           ))}
 
           <div
@@ -199,8 +517,11 @@ export default function Navbar() {
           >
             Contact Us
           </div>
+
         </div>
+
       </div>
+
     </header>
   );
 }

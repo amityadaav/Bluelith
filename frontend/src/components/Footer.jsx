@@ -74,8 +74,7 @@ export default function Footer() {
             <h3>BlueLith Technologies</h3>
           </Link>
           <p>
-            Building modern, scalable and future-ready digital solutions for
-            startups and businesses.
+          BlueLith is a software development company delivering modern web development services and custom software development solutions for startups and growing businesses.
           </p>
         </div>
 

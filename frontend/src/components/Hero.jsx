@@ -49,19 +49,14 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-left">
           <h1 className="hero-title">
-            <span>CREATIVITY</span>
+            Build Scalable <span className="highlight">Digital Products</span>
             <br />
-            <span>MEETS</span>
-            <br />
-            <span>
-              STRATEGY <span className="knight">♟</span>
-            </span>
+            for Modern Businesses
           </h1>
 
-          <p className="hero-sub">
-            We help brands grow using innovative design, smart strategy,
-            and modern technology to build trust and drive long-term success.
-          </p>
+        <p className="hero-sub">
+          BlueLith is a software development company delivering modern web development and custom software solutions for startups and growing businesses.
+        </p>
 
           <button className="btn-primary" onClick={handleGetStarted}>
             Get Started
